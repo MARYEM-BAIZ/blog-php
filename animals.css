@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-header{
+    text-align: center;
+    padding: 15px;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 4em;
+}
+.logo-header a{
+    text-decoration: none;
+    color: #1868ae;
+}
+.main{
+    background-color: #c6d7eb;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.contact-footer{
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 2.5em;
+    color: #1868ae;
+    text-decoration: none;
+}
+.footer{
+    background-color: #d9a5b3;
+}

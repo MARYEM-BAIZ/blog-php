@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-header{
+    text-align: center;
+    padding: 15px;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 4em;
+}
+.logo-header a{
+    text-decoration: none;
+    color: #1868ae;
+}
+.main{
+    background-color: #c6d7eb;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.question{
+    color: #ef9d10;
+    text-align: center;
+    font-family: 'RocknRoll One', sans-serif;
+    margin-bottom: 20px;
+}
+.choix {
+  display: flex;
+  flex-wrap: wrap;
+}
+.choix article{
+    border: 1px solid #ef9d10 ;
+    background-color: #ef9d10;
+    padding: 15px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.choix article a{
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+/* .image-main{
+    border-radius: 50%;
+} */
+.contact-footer{
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 2.5em;
+    color: #1868ae;
+    text-decoration: none;
+}
+.footer{
+    background-color: #d9a5b3;
+}
+
+
+
+
+
+
+
+
+
+
+ 
