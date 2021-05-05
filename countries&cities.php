@@ -93,7 +93,7 @@ if (isset($_POST['americas']) ) {
 
     <main class="main">
         <div  class="container"> 
-        git add --all        
+             
            <div class="row">
            <div style=" text-align: center " class="col-4 pays">  <form action="#" method="post"> <button type="submit" name="asia" style="border:none ; background-color: #ef9d10; text-decoration: none ; font-family: 'RocknRoll One', sans-serif; font-size: 20px ; color: #1868ae"   >Asia </button>   </form> </div>
            <div class="col-2"></div>
