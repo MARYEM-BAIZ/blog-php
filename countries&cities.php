@@ -4,7 +4,16 @@ try {
     $baseblog= new PDO ('mysql:host=localhost;dbname=blog-blog;charset=utf8','root','');
 } catch (exception $e) {
     echo " la connexion a échoué " ." <br>";
-}    
+} 
+
+if (isset($_POST['africa']) ) {
+
+    $africa=$baseblog->prepare('select country from countries where continent="Africa" ');
+    $africaaa=$africa->execute(array());
+    var_dump($africaaa);
+    echo "  <br> ";
+
+}
 
 
 if (isset($_POST['asia']) ) {
@@ -17,14 +26,7 @@ if (isset($_POST['asia']) ) {
 }
 
 
-if (isset($_POST['africa']) ) {
 
-    $africa=$baseblog->prepare('select country from countries where continent="Africa" ');
-    $africaaa=$africa->execute(array());
-    var_dump($africaaa);
-    echo "  <br> ";
-
-}
 
 
 if (isset($_POST['europe']) ) {
@@ -80,7 +82,7 @@ if (isset($_POST['americas']) ) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/countries&cities.css">
+    <link rel="stylesheet" type="text/css" href="countries&cities.css">
     <title>Countries&Cities</title>
 </head>
 <body>
@@ -92,7 +94,7 @@ if (isset($_POST['americas']) ) {
 
 
     <main class="main">
-        <div  class="container"> 
+        <div   class="container"> 
              
            <div class="row">
            <div style=" text-align: center " class="col-4 pays">  <form action="#" method="post"> <button type="submit" name="asia" style="border:none ; background-color: #ef9d10; text-decoration: none ; font-family: 'RocknRoll One', sans-serif; font-size: 20px ; color: #1868ae"   >Asia </button>   </form> </div>
@@ -105,8 +107,20 @@ if (isset($_POST['americas']) ) {
             <div class="col-2"></div>
              <div style=" text-align: center " class="col-4 pays"> <form action="#" method="post"> <button type="submit" name="europe" style="border:none ; background-color: #ef9d10; text-decoration: none ; font-family: 'RocknRoll One', sans-serif; font-size: 20px ; color: #1868ae"   >Europe </button> </form> </div>
            </div>
-           <hr>
         </div>
+        <hr>
+
+  <!-- affichage des pays africa -->
+  <div class="divpays">
+        <ul >
+       
+        <?php   while ($africa1=$africa->fetch()) {?>
+        <li  style="text-align: center"> <?php echo $africa1['country'] ?> </li>
+        <?php }   ?>
+
+        </ul>
+        </div>
+
           <!-- affichage des pays asia -->
         <div class="divpays">
         <ul >
@@ -117,16 +131,8 @@ if (isset($_POST['americas']) ) {
 
         </ul>
         </div>
-           <!-- affichage des pays africa -->
-        <div class="divpays">
-        <ul >
-
-        <?php  while ($africa1=$africa->fetch()) {?>
-        <li  style="text-align: center"> <?php echo $africa1['country'] ?> </li>
-        <?php }   ?>
-
-        </ul>
-        </div>
+        
+          
            <!-- affichage des pays europe -->
            <div class="divpays">
         <ul >
