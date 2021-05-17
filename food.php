@@ -18,6 +18,30 @@ try {
     var_dump($foodegypttt);
     echo "  <br> ";
 
+
+    $foodsouthafrica=$baseblog->prepare('select * from food where country="South Africa"  ');
+    $foodsouthafricaaa=$foodsouthafrica->execute(array());
+    var_dump($foodsouthafricaaa);
+    echo "  <br> ";
+
+
+    $foodzimbabwe=$baseblog->prepare('select * from food where country="Zimbabwe"  ');
+    $foodzimbabweee=$foodzimbabwe->execute(array());
+    var_dump($foodzimbabweee);
+    echo "  <br> ";
+
+
+    $foodkenya=$baseblog->prepare('select * from food where country="Kenya"  ');
+    $foodkenyaaa=$foodkenya->execute(array());
+    var_dump($foodkenyaaa);
+    echo "  <br> ";
+
+
+    $foodnigeria=$baseblog->prepare('select * from food where country="Nigeria"  ');
+    $foodnigeriaaa=$foodnigeria->execute(array());
+    var_dump($foodnigeriaaa);
+    echo "  <br> ";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +102,78 @@ try {
           </ul>
 
      </div>
+     <!-- south africa -->
+     <div class="slide hi-slide">
+          <div class="hi-prev"></div>
+          <div class="hi-next"></div>
+          <p class="pp">South Africa</p>
+          <ul>
 
+                
+          <?php  while ($foodsouthafrica1=$foodsouthafrica->fetch()) {?>
+              <li>
+              <img src="<?php echo $foodsouthafrica1['image'] ?>" alt="image">
+              <p><?php echo $foodsouthafrica1['dishe'] ?></p>
+              </li>
+          <?php }   ?>
+            
+          </ul>
+
+     </div>
+     <!-- zimbabwe -->
+     <div class="slide hi-slide">
+          <div class="hi-prev"></div>
+          <div class="hi-next"></div>
+          <p class="pp">Zimbabwe</p>
+          <ul>
+
+                
+          <?php  while ($foodzimbabwe1=$foodzimbabwe->fetch()) {?>
+              <li>
+              <img src="<?php echo $foodzimbabwe1['image'] ?>" alt="image">
+              <p><?php echo $foodzimbabwe1['dishe'] ?></p>
+              </li>
+          <?php }   ?>
+            
+          </ul>
+
+     </div>
+     <!-- kenya -->
+     <div class="slide hi-slide">
+          <div class="hi-prev"></div>
+          <div class="hi-next"></div>
+          <p class="pp">Kenya</p>
+          <ul>
+
+                
+          <?php  while ($foodkenya1=$foodkenya->fetch()) {?>
+              <li>
+              <img src="<?php echo $foodkenya1['image'] ?>" alt="image">
+              <p><?php echo $foodkenya1['dishe'] ?></p>
+              </li>
+          <?php }   ?>
+            
+          </ul>
+
+     </div>
+     <!-- nigeria -->
+     <div class="slide hi-slide">
+          <div class="hi-prev"></div>
+          <div class="hi-next"></div>
+          <p class="pp">Nigeria</p>
+          <ul>
+
+                
+          <?php  while ($foodnigeria1=$foodnigeria->fetch()) {?>
+              <li>
+              <img src="<?php echo $foodnigeria1['image'] ?>" alt="image">
+              <p><?php echo $foodnigeria1['dishe'] ?></p>
+              </li>
+          <?php }   ?>
+            
+          </ul>
+
+     </div>
      
 
     </main>
