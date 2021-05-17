@@ -84,18 +84,26 @@
     margin: 0;
     padding: 0;
     border: 3px solid white;
-    background-color: #333;
+    background-color: white;
     cursor: pointer;
+}
+.hi-slide .pp {
+    text-align: center;
+    color: #ef9d10;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 25px;
 }
 .hi-slide > ul > li > img {
     width: 100%;
-    height: 100%;
+    height: 80%;
     background-position: center;
 }
-.hi-slide > ul > li > h5 {
-    width: 100%;
-    height: 100%;
+.hi-slide > ul > li > p {
     text-align: center;
+    color: #ef9d10;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 15px;
+    padding-top: 20px;
 }
 
 

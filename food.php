@@ -5,6 +5,19 @@ try {
 } catch (exception $e) {
     echo " la connexion a échoué " ." <br>";
 }    
+
+
+     $foodmorocco=$baseblog->prepare('select * from food where country="Morocco"  ');
+     $foodmoroccooo=$foodmorocco->execute(array());
+    //   var_dump($foodmoroccooo);
+    //   echo "  <br> ";
+
+
+    $foodegypt=$baseblog->prepare('select * from food where country="Egypt"  ');
+    $foodegypttt=$foodegypt->execute(array());
+    var_dump($foodegypttt);
+    echo "  <br> ";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,52 +42,44 @@ try {
 
 
     <main class="main">
-
+    <!-- morocco -->
      <div class="slide hi-slide">
           <div class="hi-prev"></div>
           <div class="hi-next"></div>
-
+          <p class="pp">Morocco</p>
           <ul>
 
-                <p>Country</p>
-
+                
+          <?php  while ($foodmorocco1=$foodmorocco->fetch()) {?>
               <li>
-              <img src="img.jpg" alt="image">
-              <h5>name</h5>
+              <img src="<?php echo $foodmorocco1['image'] ?>" alt="image">
+              <p><?php echo $foodmorocco1['dishe'] ?></p>
               </li>
-
-              <li>
-              <img src="img.jpg" alt="image">
-              <h5>name</h5>
-              </li>
-
-              <li>
-              <img src="img.jpg" alt="image">
-              <h5>name</h5>
-              </li>
-
-              <li>
-              <img src="img.jpg" alt="image">
-              <h5>name</h5>
-              </li>
-
-              <li>
-              <img src="img.jpg" alt="image">
-              <h5>name</h5>
-              </li>
-
-              <li>
-              <img src="img.jpg" alt="image">
-              <h5>name</h5>
-              </li>
-
-              <li>
-              <img src="img.jpg" alt="image">
-              <h5>name</h5>
-              </li>
+          <?php }   ?>
+            
           </ul>
 
      </div>
+     <!-- egypt -->
+     <div class="slide hi-slide">
+          <div class="hi-prev"></div>
+          <div class="hi-next"></div>
+          <p class="pp">Egypt</p>
+          <ul>
+
+                
+          <?php  while ($foodegypt1=$foodegypt->fetch()) {?>
+              <li>
+              <img src="<?php echo $foodegypt1['image'] ?>" alt="image">
+              <p><?php echo $foodegypt1['dishe'] ?></p>
+              </li>
+          <?php }   ?>
+            
+          </ul>
+
+     </div>
+
+     
 
     </main>
 
