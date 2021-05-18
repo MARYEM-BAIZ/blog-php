@@ -3,7 +3,9 @@
     margin: 0;
     padding: 0;
 }
-
+.div-header{
+    padding-top: 10px;
+}
 .logo-header{
     text-align: center;
     padding: 15px;
@@ -13,6 +15,16 @@
 .logo-header a{
     text-decoration: none;
     color: #1868ae;
+}
+
+.aaaa .aa {
+    text-decoration: none;
+    border: 1px solid #1868ae;
+    background-color: #1868ae;
+    color: #d9a5b3 ;
+    padding: 7px;
+    border-radius: 7px;
+    font-family: 'RocknRoll One', sans-serif;
 }
 .main{
     background-color: #c6d7eb;

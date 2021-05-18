@@ -15,8 +15,8 @@ try {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/accueil.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="seconnecter.css">
+    <title>Se connecter</title>
 </head>
 <body>
 <header>
@@ -37,14 +37,17 @@ try {
 </header>
 
 <main class="main">
-<h4 class="question">YOU WANT TO KNOW ABOUT WHAT ?</h4>
-<!-- <div > <img style="width: 50% ;  display: block; margin-left: auto; margin-right: auto;" class="image-main" src="photos/image.jpg" alt="image"></div> -->
-<div class="choix">
-<article> <a style="color: #1868ae" href="countries&cities.php">Countries & Cities</a></article>
-<article><a style="color: #1868ae" href="animals.php">Animals</a></article>
-<article><a style="color: #1868ae" href="food.php">Food</a></article>
-<article><a style="color: #1868ae" href="#">hchh</a></article>
-</div>
+
+<div class="seconnecter">
+  <form action=""  method="post"  enctype="multipart/form-data">
+     
+      <input class="input" type="email" name="email" placeholder="Email">
+      <input class="input" type="password" name="password" placeholder="Password">
+
+      <input  class="inputsubmit" type="submit" name="seconnecter" value="Sign In">
+  </form>
+  </div>
+
 </main>
     
 <footer class="footer">
@@ -53,20 +56,5 @@ try {
     </div>
 </footer>
 
-<script>
-
-    // const btnheader= document.getElementById('bouttonheader');
-    // btnheader.addEventListener('click', function (event) {
-    //     event.preventDefault();
-
-    //     let para = document.createElement("p");
-    //     let node = document.createTextNode("this is new");
-    //     para.appendChild(node);
-
-    //     let div = document.getElementById("div-header");
-    //     div.appendChild(para);
-    // })
-
-</script>
 </body>
 </html>

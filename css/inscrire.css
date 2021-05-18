@@ -16,6 +16,7 @@
     text-decoration: none;
     color: #1868ae;
 }
+
 .aaaa .aa {
     text-decoration: none;
     border: 1px solid #1868ae;
@@ -30,20 +31,33 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
-.pays {
-    border: 1px solid #ef9d10 ;
+.inscrire {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
     background-color: #ef9d10;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    
+    border-radius: 7px;
 }
-.divpays {
-    margin-top: 30px;
-}
-.divpays ul li {
+.inscrire form .input {
+    display: block;
+    text-align: center;
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    padding: 10px;
     font-family: 'RocknRoll One', sans-serif;
-    font-size: 30px;
+    color: gray;
+}
+.inscrire form .inputsubmit {
+    width: 50%; 
+    border: none;
+    padding: 10px;
+    font-family: 'RocknRoll One', sans-serif;
+    border-radius: 7px;
+    background-color: white;
+    color: gray;
 }
 .contact-footer{
     font-family: 'RocknRoll One', sans-serif;

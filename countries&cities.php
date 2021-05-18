@@ -87,7 +87,13 @@ if (isset($_POST['americas']) ) {
 </head>
 <body>
     <header>
-    <div style=" background-color: #d9a5b3" >
+    <div style=" background-color: #d9a5b3" class="div-header" >
+    <div  class="aaaa" >
+
+<a class="aa" href="inscrire.php">S'inscrire</a>
+<a  class="aa" href="seconnecter.php">Se connecter</a>
+
+</div>
 <p class="logo-header"><a href="accueil.php">know</a></p>
 </div>
     </header>

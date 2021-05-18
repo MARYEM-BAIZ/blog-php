@@ -53,13 +53,19 @@ try {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/food.css">
+    <link rel="stylesheet" type="text/css" href="food.css">
     <title>Countries&Cities</title>
 </head>
 <body>
     
 <header>
-    <div style=" background-color: #d9a5b3" >
+    <div style=" background-color: #d9a5b3" class="div-header" >
+    <div  class="aaaa" >
+
+<a class="aa" href="inscrire.php">S'inscrire</a>
+<a  class="aa" href="seconnecter.php">Se connecter</a>
+
+</div>
 <p class="logo-header"><a href="accueil.php">know</a></p>
 </div>
     </header>
