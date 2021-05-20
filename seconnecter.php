@@ -34,7 +34,7 @@ if (isset($_POST['seconnecter']) ) {
          
                $_SESSION['username'] = $ligne['username']; 
                $_SESSION['id'] = $ligne['id']; 
-               $_SESSION['avater'] = $ligne['avatar']; 
+               $_SESSION['avatar'] = $ligne['avatar']; 
                $_SESSION['email'] = $ligne['email']; 
                $_SESSION['naissance'] = $ligne['naissance']; 
                $_SESSION['genre'] = $ligne['genre']; 
@@ -69,7 +69,7 @@ if (isset($_POST['seconnecter']) ) {
 <div  class="aaaa" >
 
 <a class="aa" href="inscrire.php">S'inscrire</a>
-<a  class="aa" href="seconnecter.php">Se connecter</a>
+<a style="margin-left: 20px;" class="aa" href="seconnecter.php">Se connecter</a>
 
 </div>
 <p class="logo-header"><a href="accueil.php">know</a></p>

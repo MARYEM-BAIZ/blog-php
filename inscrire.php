@@ -137,7 +137,7 @@ if(isset($_POST['inscrire']) && $_POST['username']== true   && $_POST['email']==
 <div  class="aaaa" >
 
 <a class="aa" href="inscrire.php">S'inscrire</a>
-<a  class="aa" href="seconnecter.php">Se connecter</a>
+<a style="margin-left: 20px;" class="aa" href="seconnecter.php">Se connecter</a>
 
 </div>
 <p class="logo-header"><a href="accueil.php">know</a></p>

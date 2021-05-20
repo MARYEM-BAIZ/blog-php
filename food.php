@@ -1,4 +1,6 @@
-<?php  
+<?php 
+
+session_start();
 
 try {
     $baseblog= new PDO ('mysql:host=localhost;dbname=blog-blog;charset=utf8','root','');
@@ -63,9 +65,11 @@ try {
     <div  class="aaaa" >
 
 <a class="aa" href="inscrire.php">S'inscrire</a>
-<a  class="aa" href="seconnecter.php">Se connecter</a>
+<a style="margin-left: 20px;" class="aa" href="seconnecter.php">Se connecter</a>
 
 </div>
+<p style="  display: inline-block; margin-top:10px ; margin-left: 20px " > <a href=""> <img class="imageuser" src="<?php  echo $_SESSION['avatar'] ?>" alt="image"></a> <h6 class="nameuser" ><?php  echo $_SESSION['username'] ?></h6> </p>
+
 <p class="logo-header"><a href="accueil.php">know</a></p>
 </div>
     </header>
