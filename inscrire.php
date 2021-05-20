@@ -7,7 +7,7 @@ try {
 }   
 
     
-if(isset($_POST['inscrire'])){
+if(isset($_POST['inscrire']) && $_POST['username']== true   && $_POST['email']== true  && $_POST['password']== true  && $_POST['naissance']== true  && $_POST['genre']== true  ){
             
     
             $username=strip_tags($_POST['username']);
@@ -22,37 +22,37 @@ if(isset($_POST['inscrire'])){
             $password=htmlspecialchars($_POST['password']);
             
             
-            $datedenaissance=strip_tags($_POST['naissance']);
-            $datedenaissance=htmlspecialchars($_POST['naissance']);
+            $datedenaissance= date('y-m-d', strtotime($_POST['naissance'])) ;
+            $genre = $_POST['genre'];
 
 
           
         
 
-          echo "<pre>";
-         print_r($_FILES['file']);
-         echo "  </pre> ";
-         echo "  <br> ";
+        //   echo "<pre>";
+        //  print_r($_FILES['file']);
+        //  echo "  </pre> ";
+        //  echo "  <br> ";
 
-        echo "<pre>";
-          print_r($username);
-          echo "  </pre> ";
-          echo "  <br> ";
+        // echo "<pre>";
+        //   print_r($username);
+        //   echo "  </pre> ";
+        //   echo "  <br> ";
 
-          echo "<pre>";
-          print_r($email);
-          echo "  </pre> ";
-          echo "  <br> ";
+        //   echo "<pre>";
+        //   print_r($email);
+        //   echo "  </pre> ";
+        //   echo "  <br> ";
 
-          echo "<pre>";
-          print_r($password);
-          echo "  </pre> ";
-          echo "  <br> ";
+        //   echo "<pre>";
+        //   print_r($password);
+        //   echo "  </pre> ";
+        //   echo "  <br> ";
 
-          echo "<pre>";
-          print_r($datedenaissance);
-          echo "  </pre> ";
-          echo "  <br> ";
+        //   echo "<pre>";
+        //   print_r($datedenaissance);
+        //   echo "  </pre> ";
+        //   echo "  <br> ";
        
 
         if ( isset($_FILES['file']) and $_FILES['file']['error']== 0 ) {
@@ -65,44 +65,49 @@ if(isset($_POST['inscrire'])){
                     $resultat=in_array($extension,$liste_extensions_acceptables);
 
                      
-          echo "<pre>";
-          print_r($details);
-          echo "  </pre> ";
-          echo "  <br> ";
-        var_dump($resultat);
-        echo "  <br> ";
+        //   echo "<pre>";
+        //   print_r($details);
+        //   echo "  </pre> ";
+        //   echo "  <br> ";
+        // var_dump($resultat);
+        // echo "  <br> ";
 
-        echo "<pre>";
-        print_r($resultat);
-        echo "  </pre> ";
-        echo "  <br> ";
+        // echo "<pre>";
+        // print_r($resultat);
+        // echo "  </pre> ";
+        // echo "  <br> ";
 
                     if ($resultat == true) {
                         move_uploaded_file($_FILES['file']['tmp_name'] , "imageuser/" .$details['basename']);
                     }
                             $chemain= "imageuser/" .$details['basename'];
 
-                            echo "<pre>";
-                            print_r($chemain);
-                            echo "  </pre> ";
-                            echo "  <br> ";
-                            // $_SESSION['immageutilisateur'] = $chemain;
-                $inserer=$baseblog->prepare(' insert into user(username,email,password,avatar,date-de-naissance) values(?,?,?,?,?) ');
-                $inserer1=$inserer->execute(array($_POST['username'],$_POST['email'],$_POST['password'],$chemain,$_POST['naissance']));
-                var_dump($inserer1);
-                echo "  <br> ";
+                            // echo "<pre>";
+                            // print_r($chemain);
+                            // echo "  </pre> ";
+                            // echo "  <br> ";
+                            
+                $inserer=$baseblog->prepare(' insert into user(username,email,password,avatar, naissance , genre) values(?,?,?,?,?,?) ');
+                $inserer1=$inserer->execute(array($_POST['username'],$_POST['email'],$_POST['password'],$chemain,$datedenaissance,$genre));
+                // var_dump($inserer1);
+                // echo "  <br> ";
               }
-              //header('Location:seconnecter.php');
+              header('Location:seconnecter.php');
         }
         else {
             $avatar="photos/image-avatar.png";
-            $inserer=$baseblog->prepare(' insert into user(username,email,password,avatar,date-de-naissance,genre) values(?,?,?,?,?,?) ');
-                $inserer1=$inserer->execute(array($_POST['username'],$_POST['email'],$_POST['password'],$avatar,$_POST['date-de-naissance'],2));
+            $inserer=$baseblog->prepare(' insert into user(username,email,password,avatar,naissance,genre) values(?,?,?,?,?,?) ');
+                $inserer1=$inserer->execute(array($_POST['username'],$_POST['email'],$_POST['password'],$avatar,$datedenaissance,$genre));
                 header('Location:seconnecter.php');
-                var_dump($inserer1);
-                echo "  <br> ";
+                // var_dump($inserer1);
+                // echo "  <br> ";
         }
-        // header('Location:seconnecter.php');
+       
+       
+    }
+
+    if (isset($_POST['inscrire']) && ($_POST['username']== false   || $_POST['email']== false  || $_POST['password']== false  || $_POST['naissance']== false  || $_POST['genre']== false)  ){
+       echo "hiiii";
     }
 
 
@@ -152,6 +157,10 @@ if(isset($_POST['inscrire'])){
       <input class="input" type="email" name="email" placeholder="Email">
       <input class="input" type="password" name="password" placeholder="Password">
       <input class="input" type="date" name="naissance" placeholder="Birth">
+      <select  name="genre" class="input" >
+      <option value="female">female</option>
+      <option value="male">male</option>
+      </select>
 
       <div style=" margin-bottom: 20px; font-family: 'RocknRoll One', sans-serif; text-align:center" class=" input-group">
       <div class="custom-file">
