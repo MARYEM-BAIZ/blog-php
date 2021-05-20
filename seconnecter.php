@@ -1,10 +1,55 @@
 <?php  
 
+session_start();
+
+
 try {
     $baseblog= new PDO ('mysql:host=localhost;dbname=blog-blog;charset=utf8','root','');
 } catch (exception $e) {
     echo " la connexion a échoué " ." <br>";
 }    
+
+
+if (isset($_POST['seconnecter']) ) {
+   
+    $email=strip_tags($_POST['email']);
+    $email=htmlspecialchars($_POST['email']);
+
+
+    $password=strip_tags($_POST['password']);
+    $password=htmlspecialchars($_POST['password']);
+      
+
+
+
+       $verif=$baseblog->prepare('select * from user where email= ? and password = ? ');
+       $verif->execute(array($email, $password));
+    //    var_dump($verif->rowCount()) ; 
+       $ligne = $verif->fetch(); 
+      //  echo "<pre>";
+      //   var_dump($ligne);
+      //   echo "</pre>";
+     if(isset($ligne['email'] ) && isset($ligne['password']) )
+     {
+         
+               $_SESSION['username'] = $ligne['username']; 
+               $_SESSION['id'] = $ligne['id']; 
+               $_SESSION['avater'] = $ligne['avatar']; 
+               $_SESSION['email'] = $ligne['email']; 
+               $_SESSION['naissance'] = $ligne['naissance']; 
+               $_SESSION['genre'] = $ligne['genre']; 
+              
+
+            header('Location:accueil.php'); 
+           
+     }
+     else {
+         echo "There's an incorrect information ";
+     }
+    }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

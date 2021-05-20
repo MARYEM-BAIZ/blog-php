@@ -1,5 +1,7 @@
 <?php  
 
+session_start();
+
 try {
     $baseblog= new PDO ('mysql:host=localhost;dbname=blog-blog;charset=utf8','root','');
 } catch (exception $e) {
@@ -20,19 +22,22 @@ try {
 </head>
 <body>
 <header>
+
 <div style=" background-color: #d9a5b3" class="div-header">
+
+
+
 <div  class="aaaa" >
 
 <a class="aa" href="inscrire.php">S'inscrire</a>
 <a  class="aa" href="seconnecter.php">Se connecter</a>
 
 </div>
+
+
+
 <p class="logo-header"><a href="accueil.php">know</a></p>
 </div>
-
-
-
-
 
 </header>
 
@@ -53,20 +58,6 @@ try {
     </div>
 </footer>
 
-<script>
 
-    // const btnheader= document.getElementById('bouttonheader');
-    // btnheader.addEventListener('click', function (event) {
-    //     event.preventDefault();
-
-    //     let para = document.createElement("p");
-    //     let node = document.createTextNode("this is new");
-    //     para.appendChild(node);
-
-    //     let div = document.getElementById("div-header");
-    //     div.appendChild(para);
-    // })
-
-</script>
 </body>
 </html>

@@ -87,6 +87,7 @@ if(isset($_POST['inscrire']) && $_POST['username']== true   && $_POST['email']==
                             // echo "  </pre> ";
                             // echo "  <br> ";
                             
+                            
                 $inserer=$baseblog->prepare(' insert into user(username,email,password,avatar, naissance , genre) values(?,?,?,?,?,?) ');
                 $inserer1=$inserer->execute(array($_POST['username'],$_POST['email'],$_POST['password'],$chemain,$datedenaissance,$genre));
                 // var_dump($inserer1);
@@ -107,8 +108,8 @@ if(isset($_POST['inscrire']) && $_POST['username']== true   && $_POST['email']==
     }
 
     if (isset($_POST['inscrire']) && ($_POST['username']== false   || $_POST['email']== false  || $_POST['password']== false  || $_POST['naissance']== false  || $_POST['genre']== false)  ){
-       echo "hiiii";
-    }
+        echo "There's a messing information !";
+     }
 
 
 
