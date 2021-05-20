@@ -44,7 +44,7 @@ if (isset($_POST['seconnecter']) ) {
            
      }
      else {
-         echo "There's an incorrect information ";
+         echo "There's an incorrect information or the email that you try to create is existing";
      }
     }
 

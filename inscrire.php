@@ -55,7 +55,7 @@ if(isset($_POST['inscrire']) && $_POST['username']== true   && $_POST['email']==
         //   echo "  <br> ";
        
 
-        if ( isset($_FILES['file']) and $_FILES['file']['error']== 0 ) {
+        if ( isset($_FILES['file']) && $_FILES['file']['error']== 0 ) {
             
               if ($_FILES['file']['size'] < 2000000 ) {
                   
