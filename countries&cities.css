@@ -16,13 +16,13 @@
     text-decoration: none;
     color: #1868ae;
 }
-.nameuserr{
+.nameuser{
     color: #ef9d10;
     font-family: 'RocknRoll One', sans-serif;
     display: inline;
     margin-left: 5px;
 }
-.imageuserr{
+.imageuser{
     height: 60px;
     width: 60px;
     border-radius: 50%;
@@ -30,6 +30,33 @@
     background-repeat: no-repeat;
     background-size: cover;
   
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ef9d10;
+    min-width: 160px;
+    z-index: 1;
+    margin-top: 5px;
+  }
+  .dropdown-content a {
+    color: #1868ae;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-family: 'RocknRoll One', sans-serif;
+  }
+  .dropdown-content a:hover {
+      background-color: #1868ae ;
+       color: #ef9d10;
+    }
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 .aaaa {
     margin-left: 20px;

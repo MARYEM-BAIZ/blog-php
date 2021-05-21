@@ -31,6 +31,33 @@
     background-size: cover;
   
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ef9d10;
+    min-width: 160px;
+    z-index: 1;
+    margin-top: 5px;
+  }
+  .dropdown-content a {
+    color: #1868ae;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-family: 'RocknRoll One', sans-serif;
+  }
+  .dropdown-content a:hover {
+      background-color: #1868ae ;
+       color: #ef9d10;
+    }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 .aaaa {
     margin-left: 20px;
 }

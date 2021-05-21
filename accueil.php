@@ -30,20 +30,21 @@ try {
 <div style=" background-color: #d9a5b3" class="div-header">
 
 
-
+<?php    if (!isset($_SESSION['id'])) {  ?>
 <div  class="aaaa" >
 <a class="aa" href="inscrire.php">S'inscrire</a>
 <a style="margin-left: 20px;" class="aa" href="seconnecter.php">Se connecter</a>
 </div>
+<?php  }  ?>
 
-
-<div style="  display: inline-block; margin-top:10px ; margin-left: 20px " class="dropdown"  > <img class="imageuser" src="<?php  echo $_SESSION['avatar'] ?>" alt="image"> <h6 class="nameuser" ><?php  echo $_SESSION['username'] ?></h6> 
+<?php    if (isset($_SESSION['id'])) {  ?>
+<div style=" margin-top:10px ; margin-left: 20px " class="dropdown"  > <img class="imageuser" src="<?php  echo $_SESSION['avatar'] ?>" alt="image"> <h6 class="nameuser" ><?php  echo $_SESSION['username'] ?></h6> 
 <div class="dropdown-content">
-  <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
-  <a href="#">Link 3</a>
+  <a href="profile-user.php">Profile</a>
+  <a href="deconnexion.php">Log Out</a>
   </div>
 </div>
+<?php  }  ?>
 
 <p class="logo-header"><a href="accueil.php">know</a></p>
 </div>
