@@ -70,14 +70,30 @@ try {
 </div>
 <?php  }  ?>
 
+<ul class="ulul" >
+<li>
 <?php    if (isset($_SESSION['id'])) {  ?>
 <div style=" margin-top:10px ; margin-left: 20px " class="dropdown"  > <img class="imageuser" src="<?php  echo $_SESSION['avatar'] ?>" alt="image"> <h6 class="nameuser" ><?php  echo $_SESSION['username'] ?></h6> 
 <div class="dropdown-content">
-<a href="profile-user.php">Profile</a>
+  <a href="profile-user.php">Profile</a>
   <a href="deconnexion.php">Log Out</a>
   </div>
 </div>
 <?php  }  ?>
+</li>
+
+<li>
+<div class="dropdownquiz">
+<h6 class="h6quiz" >Quiz</h6>
+<div class="dropdownquiz-content">
+<a href="quiz-countries-cities.php">Countries & Cities</a>
+<a href="quiz-animals.php">Animals</a>
+<a href="quiz-food.php">Food</a>
+<a href="quiz-mixe.php">Genaral</a>
+</div>
+</div>
+</li>
+</ul>
 
 <p class="logo-header"><a href="accueil.php">know</a></p>
 </div>

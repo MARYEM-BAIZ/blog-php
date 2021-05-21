@@ -11,7 +11,6 @@
     padding: 15px;
     font-family: 'RocknRoll One', sans-serif;
     font-size: 4em;
-    margin-right: 200px;
 }
 .logo-header a{
     text-decoration: none;
@@ -59,52 +58,6 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-.ulul {
-    list-style: none;
-}
-.ulul li {
-    float: left;
-}
-
-.h6quiz {
-    border: 1px solid #1868ae;
-    background-color: #1868ae;
-    color: #d9a5b3 ;
-    padding: 7px 20px;
-    border-radius: 7px;
-    font-family: 'RocknRoll One', sans-serif;
-    text-align: center;
-}
-.dropdownquiz {
-    position: relative;
-    display: inline-block;
-    margin-left: 20px;
-    margin-top: 19px;
-}
-.dropdownquiz-content {
-    display: none;
-    position: absolute;
-    background-color: #ef9d10;
-    min-width: 200px;
-    z-index: 1;
-    margin-top: 5px;
-}
-.dropdownquiz-content a {
-    color: #1868ae;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    font-family: 'RocknRoll One', sans-serif;
-}
-.dropdownquiz-content a:hover {
-    background-color: #1868ae ;
-    color: #ef9d10;
-}
-.dropdownquiz:hover .dropdownquiz-content {
-    display: block;
-}
-
 .aaaa {
     margin-left: 20px;
 }
@@ -121,24 +74,6 @@
     background-color: #c6d7eb;
     padding-top: 50px;
     padding-bottom: 50px;
-}
-.ththeaad{
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 20px;
-     border: 3px solid #ef9d10 ;
-     text-align: center;
-     padding: 15px;
-     color: #1868ae;
-}
-.thtbody {
-    border: 3px solid #ef9d10 ;
-    text-align: center;
-    padding: 15px;
-}
-.tableanimals{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
 }
 .contact-footer{
     font-family: 'RocknRoll One', sans-serif;
