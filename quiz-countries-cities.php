@@ -9,7 +9,12 @@ try {
 }    
 
 
+    $select=$baseblog->prepare('select questions.question,reponses.reponse from questions inner join  reponses where questions.id=reponses.id-question and questions.categorie="countries and cities"  ');
+    $selecttt=$select->execute(array());
+       var_dump($selecttt);
+       echo "  <br> ";
     
+        
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +27,7 @@ try {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/quiz-countries-cities.css">
+    <link rel="stylesheet" type="text/css" href="quiz-countries-cities.css">
     <title>Quiz Contries & Cities</title>
 </head>
 <body>
@@ -53,7 +58,24 @@ try {
 
     <main class="main">
 
-    
+    <div class="questions">
+    <?php  while ($select1=$select->fetch()) {?>
+        <article>
+            <p class="pp"  ><?php echo $select1['question'] ?> ?</p>
+           
+            <p><?php echo $select1['reponse'] ?> </p>
+        </article>
+        <?php
+          echo "<pre>";
+          print_r($select1);
+          echo "  </pre> ";
+          echo "  <br> ";
+         } ?>
+    </div>
+
+    <div class="score">
+        <p>Your Score :   /10</p>
+    </div>
 
     </main>
 

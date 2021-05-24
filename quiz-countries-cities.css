@@ -75,6 +75,31 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
+.questions {
+ width: 60%;
+ margin-left: auto;
+ margin-right: auto;
+}
+.questions .pp {
+    text-align:center ;
+    color: #ef9d10;
+    font-size: 1.5em;
+}
+.score {
+ width: 60%;
+ margin-left: auto;
+ margin-right: auto;  
+ background-color: #ef9d10;  
+ border-radius: 7px;
+ padding: 30px;
+ margin-top: 30px;
+}
+.score p {
+    text-align: center;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 2em;
+    color: #1868ae;
+}
 .contact-footer{
     font-family: 'RocknRoll One', sans-serif;
     font-size: 2.5em;
