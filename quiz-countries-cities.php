@@ -13,6 +13,26 @@ try {
     $selecttt=$select->execute(array());
        var_dump($selecttt);
        echo "  <br> ";
+
+       $selecti=$baseblog->prepare('select reponses.reponse from questions inner join  reponses where questions.id=reponses.id-question and questions.categorie="countries and cities"  ');
+       $selecttti=$selecti->execute(array());
+       $selecti1=$selecti->fetch();
+       echo "<pre>";
+       print_r($selecti1);
+       echo "  </pre> ";
+       echo "  <br> ";
+     
+          var_dump($selecttti);
+          echo "  <br> ";
+
+    $number=$baseblog->prepare('select count(id) as num from questions where categorie="countries and cities"  ');
+    $numberrr=$number->execute();
+    var_dump($numberrr);
+    echo "  <br> ";
+    $num=$number->fetch()
+     
+
+    
     
         
 
@@ -74,7 +94,7 @@ try {
     </div>
 
     <div class="score">
-        <p>Your Score :   /10</p>
+        <p>Your Score :   /<?php echo $num['num']  ?> </p>
     </div>
 
     </main>
