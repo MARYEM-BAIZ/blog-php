@@ -81,8 +81,8 @@ try {
                                   $question = $select1['question']; 
                                 } ?> </p>
            
-            <p>
-            <?php  echo $select1['reponse'];  ?> </p>
+           <a href=""><?php  echo $select1['reponse'];  ?></a>
+           
         </article>
         <?php
             // echo "<pre>";
