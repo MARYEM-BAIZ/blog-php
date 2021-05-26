@@ -18,7 +18,7 @@ if (isset($_POST['africa']) ) {
 }
 
 
-if (isset($_POST['asia']) ) {
+elseif (isset($_POST['asia']) ) {
 
     $asia=$baseblog->prepare('select country from countries where continent="Asia" ');
     $asiaaa=$asia->execute(array());
@@ -31,7 +31,7 @@ if (isset($_POST['asia']) ) {
 
 
 
-if (isset($_POST['europe']) ) {
+elseif (isset($_POST['europe']) ) {
 
     $europe=$baseblog->prepare('select country from countries where continent="Europe" ');
     $europeee=$europe->execute(array());
@@ -42,7 +42,7 @@ if (isset($_POST['europe']) ) {
 
 
 
-if (isset($_POST['oceania']) ) {
+elseif (isset($_POST['oceania']) ) {
 
     $oceaniaAustralasia=$baseblog->prepare('select country from countries where continent="Oceania-Australasia" ');
     $oceaniaaaAustralasia=$oceaniaAustralasia->execute(array());
@@ -58,7 +58,7 @@ if (isset($_POST['oceania']) ) {
 
 
 
-if (isset($_POST['americas']) ) {
+elseif (isset($_POST['americas']) ) {
 
     $NorthAmerica=$baseblog->prepare('select country from countries where continent="North America" ');
     $NorthAmericaaa=$NorthAmerica->execute(array());

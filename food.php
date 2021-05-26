@@ -11,8 +11,8 @@ try {
 
      $foodmorocco=$baseblog->prepare('select * from food where country="Morocco"  ');
      $foodmoroccooo=$foodmorocco->execute(array());
-    //   var_dump($foodmoroccooo);
-    //   echo "  <br> ";
+      var_dump($foodmoroccooo);
+      echo "  <br> ";
 
 
     $foodegypt=$baseblog->prepare('select * from food where country="Egypt"  ');
@@ -109,7 +109,7 @@ try {
           <ul>
 
                 
-          <?php  while ($foodmorocco1=$foodmorocco->fetch()) {?>
+          <?php  while ($foodmorocco1=$foodmorocco->fetchAll()) {?>
               <li>
               <img src="<?php echo $foodmorocco1['image'] ?>" alt="image">
               <p><?php echo $foodmorocco1['dishe'] ?></p>
@@ -127,7 +127,7 @@ try {
           <ul>
 
                 
-          <?php  while ($foodegypt1=$foodegypt->fetch()) {?>
+          <?php  while ($foodegypt1=$foodegypt->fetchAll()) {?>
               <li>
               <img src="<?php echo $foodegypt1['image'] ?>" alt="image">
               <p><?php echo $foodegypt1['dishe'] ?></p>
@@ -145,7 +145,7 @@ try {
           <ul>
 
                 
-          <?php  while ($foodsouthafrica1=$foodsouthafrica->fetch()) {?>
+          <?php  while ($foodsouthafrica1=$foodsouthafrica->fetchAll()) {?>
               <li>
               <img src="<?php echo $foodsouthafrica1['image'] ?>" alt="image">
               <p><?php echo $foodsouthafrica1['dishe'] ?></p>
@@ -163,7 +163,7 @@ try {
           <ul>
 
                 
-          <?php  while ($foodzimbabwe1=$foodzimbabwe->fetch()) {?>
+          <?php  while ($foodzimbabwe1=$foodzimbabwe->fetchAll()) {?>
               <li>
               <img src="<?php echo $foodzimbabwe1['image'] ?>" alt="image">
               <p><?php echo $foodzimbabwe1['dishe'] ?></p>
@@ -181,7 +181,7 @@ try {
           <ul>
 
                 
-          <?php  while ($foodkenya1=$foodkenya->fetch()) {?>
+          <?php  while ($foodkenya1=$foodkenya->fetchAll()) {?>
               <li>
               <img src="<?php echo $foodkenya1['image'] ?>" alt="image">
               <p><?php echo $foodkenya1['dishe'] ?></p>
@@ -199,7 +199,7 @@ try {
           <ul>
 
                 
-          <?php  while ($foodnigeria1=$foodnigeria->fetch()) {?>
+          <?php  while ($foodnigeria1=$foodnigeria->fetchAll()) {?>
               <li>
               <img src="<?php echo $foodnigeria1['image'] ?>" alt="image">
               <p><?php echo $foodnigeria1['dishe'] ?></p>

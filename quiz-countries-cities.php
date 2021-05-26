@@ -9,26 +9,18 @@ try {
 }    
 
 
-    $select=$baseblog->prepare('select questions.question,reponses.reponse from questions inner join  reponses where questions.id=reponses.id-question and questions.categorie="countries and cities"  ');
+    $select=$baseblog->prepare('SELECT questions.id,questions.question,reponses.reponse FROM questions INNER JOIN  reponses WHERE questions.id=reponses.idquestion AND questions.categorie="countries and cities"  ');
     $selecttt=$select->execute(array());
-       var_dump($selecttt);
-       echo "  <br> ";
+    //    var_dump($selecttt);
+    //    echo "  <br> ";
+        
 
-       $selecti=$baseblog->prepare('select reponses.reponse from questions inner join  reponses where questions.id=reponses.id-question and questions.categorie="countries and cities"  ');
-       $selecttti=$selecti->execute(array());
-       $selecti1=$selecti->fetch();
-       echo "<pre>";
-       print_r($selecti1);
-       echo "  </pre> ";
-       echo "  <br> ";
-     
-          var_dump($selecttti);
-          echo "  <br> ";
+
 
     $number=$baseblog->prepare('select count(id) as num from questions where categorie="countries and cities"  ');
     $numberrr=$number->execute();
-    var_dump($numberrr);
-    echo "  <br> ";
+    // var_dump($numberrr);
+    // echo "  <br> ";
     $num=$number->fetch()
      
 
@@ -79,17 +71,24 @@ try {
     <main class="main">
 
     <div class="questions">
-    <?php  while ($select1=$select->fetch()) {?>
+    <?php
+    $question = '';
+      while ($select1=$select->fetch()) {?>
         <article>
-            <p class="pp"  ><?php echo $select1['question'] ?> ?</p>
+            <p class="pp"  ><?php  if ($question != $select1['question']) {
+                                  echo $select1['question']  ;
+                                  echo " ?";
+                                  $question = $select1['question']; 
+                                } ?> </p>
            
-            <p><?php echo $select1['reponse'] ?> </p>
+            <p>
+            <?php  echo $select1['reponse'];  ?> </p>
         </article>
         <?php
-          echo "<pre>";
-          print_r($select1);
-          echo "  </pre> ";
-          echo "  <br> ";
+            // echo "<pre>";
+            // print_r($select1);
+            // echo "  </pre> ";
+            // echo "  <br> ";
          } ?>
     </div>
 
