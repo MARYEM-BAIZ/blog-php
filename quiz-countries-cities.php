@@ -9,10 +9,10 @@ try {
 }    
 
 
-    $select=$baseblog->prepare('SELECT questions.id,questions.question,reponses.reponse FROM questions INNER JOIN  reponses WHERE questions.id=reponses.idquestion AND questions.categorie="countries and cities"  ');
+    $select=$baseblog->prepare('SELECT questions.id,questions.question,reponses.reponse,reponses.vraifaux FROM questions INNER JOIN  reponses WHERE questions.id=reponses.idquestion AND questions.categorie="countries and cities"  ');
     $selecttt=$select->execute(array());
-    //    var_dump($selecttt);
-    //    echo "  <br> ";
+       var_dump($selecttt);
+       echo "  <br> ";
         
 
 
@@ -21,7 +21,7 @@ try {
     $numberrr=$number->execute();
     // var_dump($numberrr);
     // echo "  <br> ";
-    $num=$number->fetch()
+    $num=$number->fetch();
      
 
     
@@ -73,6 +73,7 @@ try {
     <div class="questions">
     <?php
     $question = '';
+    $cpt= 0 ;
       while ($select1=$select->fetch()) {?>
         <article>
             <p class="pp"  ><?php  if ($question != $select1['question']) {
@@ -81,19 +82,27 @@ try {
                                   $question = $select1['question']; 
                                 } ?> </p>
            
-           <a href=""><?php  echo $select1['reponse'];  ?></a>
-           
+           <button name="choix" type="submit"><?php  echo $select1['reponse'];  ?></button>
         </article>
         <?php
             // echo "<pre>";
             // print_r($select1);
             // echo "  </pre> ";
             // echo "  <br> ";
+            if (isset($_POST['choix']) && $select1['vraifaux']== "vrai" ) {
+                $cpt=$cpt+1;
+            }
+            elseif (isset($_POST['choix']) && $select1['vraifaux']== "faux") {
+                $cpt=$cpt;
+            }
+            else {
+                echo "no no no";
+            }
          } ?>
     </div>
 
     <div class="score">
-        <p>Your Score :   /<?php echo $num['num']  ?> </p>
+        <p>Your Score : <?php echo $cpt ;  ?>  /<?php echo $num['num']  ?> </p>
     </div>
 
     </main>

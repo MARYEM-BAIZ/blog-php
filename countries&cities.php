@@ -8,6 +8,7 @@ try {
     echo " la connexion a échoué " ." <br>";
 } 
 
+
 if (isset($_POST['africa']) ) {
 
     $africa=$baseblog->prepare('select country from countries where continent="Africa" ');
@@ -22,8 +23,8 @@ elseif (isset($_POST['asia']) ) {
 
     $asia=$baseblog->prepare('select country from countries where continent="Asia" ');
     $asiaaa=$asia->execute(array());
-    // var_dump($asiaaa);
-    // echo "  <br> ";
+     var_dump($asiaaa);
+     echo "  <br> ";
 
 }
 
@@ -144,6 +145,7 @@ elseif (isset($_POST['americas']) ) {
            </div>
         </div>
         <hr>
+
 
   <!-- affichage des pays africa -->
   <div class="divpays">
