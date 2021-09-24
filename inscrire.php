@@ -1,7 +1,7 @@
 <?php  
 
 try {
-    $baseblog= new PDO ('mysql:host=localhost;dbname=blog-blog;charset=utf8','root','');
+    $baseblog= new PDO ('mysql:host=localhost;dbname=p-php-quiz;charset=utf8','root','');
 } catch (exception $e) {
     echo " la connexion a échoué " ." <br>";
 }   
